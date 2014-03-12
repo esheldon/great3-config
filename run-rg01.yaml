@@ -1,0 +1,6 @@
+# config file for running on great3
+
+experiment: "control"
+obs_type: "ground"
+shear_type: "constant"
+
