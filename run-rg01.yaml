@@ -1,5 +1,7 @@
 # config file for running on great3
 
+run: "rg01"
+
 experiment: "control"
 obs_type: "ground"
 shear_type: "constant"
