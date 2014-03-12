@@ -6,3 +6,7 @@ experiment: "control"
 obs_type: "ground"
 shear_type: "constant"
 
+#conv: 'real'
+conv: 'fft'
+
+debug: False
