@@ -10,19 +10,22 @@ deep: True
 # size of processing chunks
 nper: 100
 
-psf_ntry: 3
+em_ntry: 20
+em_maxiter: 500
+em_tol: 5.0e-4
+
 psf_model: "em2"
-psf_maxiter: 500
-psf_tol: 5.0e-4
 
 # arcsec
 psf_fwhm_guess: 0.9
-
 
 nwalkers: 80
 burnin: 200
 nstep: 800
 mca_a: 2.0
+
+# we are just getting priors
+do_pqr: False
 
 fit_types: ['psf','simple']
 simple_models: ['exp']
@@ -39,11 +42,12 @@ counts_prior_pars: [ [0.0, 100.0] ]
 
 # guess will be from an em single-gauss fit
 use_cen_prior: True
+# arcsec; pretty broad!
 cen_width: 0.4
 
 draw_g_prior: False
 
 checkpoints: [0,10,30,60,90]
 
-make_plots: True
+make_plots: False
 
