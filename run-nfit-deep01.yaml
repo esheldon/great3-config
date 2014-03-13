@@ -27,8 +27,7 @@ mca_a: 2.0
 # we are just getting priors
 do_pqr: False
 
-fit_types: ['simple']
-simple_models: ['exp','dev']
+fit_models: ['exp','dev']
 
 # for deep use loose priors
 
