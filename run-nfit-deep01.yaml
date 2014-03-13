@@ -27,18 +27,18 @@ mca_a: 2.0
 # we are just getting priors
 do_pqr: False
 
-fit_types: ['psf','simple']
-simple_models: ['exp']
+fit_types: ['simple']
+simple_models: ['exp','dev']
 
 # for deep use loose priors
 
-g_prior_types: [null]
+g_prior_types: [null,null]
 
-T_prior_types: ['flat']
-T_prior_pars: [ [0.0, 100.0] ]
+T_prior_types: ['flat','flat']
+T_prior_pars: [ [0.0, 1000.0], [0.0, 1000.0] ]
 
-counts_prior_types: ['flat']
-counts_prior_pars: [ [0.0, 100.0] ]
+counts_prior_types: ['flat','flat']
+counts_prior_pars: [ [0.0, 100.0], [0.0, 100.0] ]
 
 # guess will be from an em single-gauss fit
 use_cen_prior: True
@@ -51,3 +51,6 @@ checkpoints: [0,10,30,60,90]
 
 make_plots: False
 
+# 20 sec per model!
+sec_per: 40.0
+nper: 100
