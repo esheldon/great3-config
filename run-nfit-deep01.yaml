@@ -47,7 +47,7 @@ cen_width: 0.4
 
 draw_g_prior: False
 
-checkpoints: [0,10,30,60,90]
+checkpoints: [10,30,60,90]
 
 make_plots: False
 
