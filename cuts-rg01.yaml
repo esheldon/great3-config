@@ -1,0 +1,15 @@
+# cuts for regauss
+# we already know the min optimal s/n is ~20
+
+cut: "rg01"
+
+max_ellip: 4.0
+max_err: 0.5
+R_range: [0.4 ,1.0]
+
+# we make deep cuts, so use shape noise
+include_shape_noise_err: True
+
+# from parametric fits to cosmos
+shape_noise_type: 'exp'
+
