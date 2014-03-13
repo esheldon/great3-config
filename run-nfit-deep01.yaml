@@ -29,10 +29,10 @@ simple_models: ['exp']
 
 # for deep use loose priors
 
-g_prior: null
+g_prior_types: [null]
 
 T_prior_types: ['flat']
-T_prior_pars: [0.0, 100.0]
+T_prior_pars: [ [0.0, 100.0] ]
 
 counts_prior_types: ['flat']
 counts_prior_pars: [ [0.0, 100.0] ]
@@ -45,5 +45,5 @@ draw_g_prior: False
 
 checkpoints: [0,10,30,60,90]
 
-make_plots: False
+make_plots: True
 
