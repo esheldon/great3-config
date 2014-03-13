@@ -1,0 +1,53 @@
+# config file for running on great3
+
+run: "nfit-deep02"
+
+experiment: "control"
+obs_type: "ground"
+shear_type: "constant"
+deep: True
+
+# size of processing chunks
+nper: 100
+
+em_ntry: 20
+em_maxiter: 500
+em_tol: 5.0e-4
+
+psf_model: "em2"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 200
+nstep: 800
+mca_a: 2.0
+
+# we are just getting priors
+do_pqr: False
+
+fit_models: ['bdf']
+
+# for deep use loose priors
+g_prior_types: [null]
+
+T_prior_types: ['flat']
+T_prior_pars: [ [0.0, 1000.0] ]
+
+counts_prior_types: ['flat']
+counts_prior_pars: [ [0.0, 100.0] ]
+
+bfrac_prior_type: null
+
+# guess will be from an em single-gauss fit
+# arcsec; pretty broad!
+use_cen_prior: True
+cen_width: 0.4
+
+checkpoints: [10,30,60,90]
+
+make_plots: False
+
+sec_per: 40.0
+nper: 100
