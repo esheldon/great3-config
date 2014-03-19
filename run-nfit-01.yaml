@@ -1,11 +1,11 @@
 # config file for running on great3
+# fit bdf will full prior
 
-run: "nfit-deep02"
+run: "nfit-01"
 
 experiment: "control"
 obs_type: "ground"
 shear_type: "constant"
-deep: True
 
 em_ntry: 20
 em_maxiter: 500
@@ -17,34 +17,28 @@ psf_model: "em2"
 psf_fwhm_guess: 0.9
 
 nwalkers: 80
-burnin: 200
+burnin: 400
 nstep: 800
 mca_a: 2.0
 
+# retry burnin until this converges or a max iter is met
+Tfracdiff_max: 0.01
+
 # we are just getting priors
-do_pqr: False
+do_pqr: True
 
 fit_models: ['bdf']
 
-# for deep use loose priors
-g_prior_types: [null]
-
-T_prior_types: ['flat']
-T_prior_pars: [ [0.0, 1000.0] ]
-
-counts_prior_types: ['flat']
-counts_prior_pars: [ [0.0, 100.0] ]
-
-bfrac_prior_type: null
+joint_prior_type: "great3-control-ground-constant"
 
 # guess will be from an em single-gauss fit
-# arcsec; pretty broad!
+# pixel scale is 0.2, so this is 1/2 of a pixel
 use_cen_prior: True
-cen_width: 0.4
+cen_width: 0.1
 
 checkpoints: [10,30,60,90]
 
 make_plots: False
 
-sec_per: 40.0
-nper: 100
+sec_per: 100.0
+nper: 50

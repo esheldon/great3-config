@@ -7,9 +7,6 @@ obs_type: "ground"
 shear_type: "constant"
 deep: True
 
-# size of processing chunks
-nper: 100
-
 em_ntry: 20
 em_maxiter: 500
 em_tol: 5.0e-4
