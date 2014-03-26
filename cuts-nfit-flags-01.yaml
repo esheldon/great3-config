@@ -2,7 +2,5 @@
 # for many runs
 cut: "nfit-flags-01"
 
-flagval: 0
-
 # check for floating point problems, e.g. nan or not finite
 check_finite: true
