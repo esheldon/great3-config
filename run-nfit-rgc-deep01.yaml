@@ -47,8 +47,6 @@ draw_g_prior: False
 
 checkpoints: [10,60,90,110]
 
-make_plots: False
-
 # 20 sec per model!
 sec_per: 20.0
 
