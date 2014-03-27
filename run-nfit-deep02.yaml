@@ -42,9 +42,11 @@ bfrac_prior_type: null
 use_cen_prior: True
 cen_width: 0.4
 
-checkpoints: [10,30,60,90]
+checkpoints: [30,60,90,110]
 
 make_plots: False
 
-sec_per: 40.0
-nper: 100
+sec_per: 90.0
+
+# this gives ~0.27 hours per job
+nper: 20

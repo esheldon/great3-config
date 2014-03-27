@@ -1,0 +1,59 @@
+# real_galaxy, ground, constant
+# fitting bdf, 3 gaussians for psf
+
+run: "nfit-rgc-deep02"
+
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: True
+
+# really nail the psf
+psf_em_ntry: 2000
+psf_em_maxiter: 50000
+psf_em_tol: 5.0e-6
+
+# don't need to nail galaxy fit
+gal_em_ntry: 200
+gal_em_maxiter: 5000
+gal_em_tol: 5.0e-4
+
+use_random_psf: False
+
+psf_model: "em3"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 200
+nstep: 800
+mca_a: 2.0
+
+# we are just getting priors
+do_pqr: False
+
+fit_models: ['bdf']
+
+# for deep use loose priors
+
+g_prior_types: [null]
+
+T_prior_types: ['flat']
+T_prior_pars: [ [0.0, 100.0] ]
+
+counts_prior_types: ['flat']
+counts_prior_pars: [ [0.0, 100.0] ]
+
+use_cen_prior: True
+
+# arcsec
+cen_width: 0.4
+
+draw_g_prior: False
+
+checkpoints: [10,60,90,110]
+
+sec_per: 20.0
+
+nper: 50

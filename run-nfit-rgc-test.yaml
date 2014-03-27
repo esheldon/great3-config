@@ -5,7 +5,7 @@
 # this is a second iteration using expand shear from nfit-rgc-01
 # also some bug fixes and shear prior fit from brighter sources
 
-run: "nfit-rgc-02"
+run: "nfit-rgc-test"
 
 shear_expand_run: "nfit-rgc-01"
 shear_expand_cut: "nfit-flags-01"
@@ -27,7 +27,7 @@ gal_em_tol: 5.0e-4
 
 use_random_psf: False
 
-psf_model: "em2"
+psf_model: "em3"
 
 # arcsec
 psf_fwhm_guess: 0.9
