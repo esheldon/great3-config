@@ -5,6 +5,9 @@ config files for running on great3
 
 ---------
 run-rgc*
+- rgc-deep01 expfit
 - real_galaxy ground constant
     - run-rgc-01 edg
     - run-rgc-02 edg i2, some minor bug fixes
+
+- rgc-deep02 bdf
