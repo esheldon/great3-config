@@ -1,0 +1,59 @@
+# real_galaxy, ground, constant
+# fitting bdf, 3 gaussians for psf
+
+run: "nfit-rgc-03"
+
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+
+# really nail the psf
+psf_em_ntry: 2000
+psf_em_maxiter: 50000
+psf_em_tol: 5.0e-6
+
+# don't need to nail galaxy fit
+gal_em_ntry: 200
+gal_em_maxiter: 5000
+gal_em_tol: 5.0e-4
+
+use_random_psf: False
+
+psf_model: "em3"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 200
+nstep: 800
+mca_a: 2.0
+
+# this doesn't mean failure, just another try with
+# three times the walkers.  Often with bdf the rate
+# doesn't get better but the degeneracy is better mapped
+# out with more walkers
+min_arate: 0.35
+nwalkers_multiply: 2
+
+mcmc_ntry: 10
+
+# we are just getting priors
+do_pqr: true
+
+fit_models: ['bdf']
+
+joint_prior_type: "great3-real_galaxy-ground-constant-bdf-hybrid"
+
+
+# arcsec
+use_cen_prior: True
+cen_width: 0.1
+
+draw_g_prior: False
+
+checkpoints: [30,60,90,110]
+
+sec_per: 100.0
+
+nper: 20
