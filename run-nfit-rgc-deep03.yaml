@@ -57,4 +57,4 @@ checkpoints: [10,60,90,110]
 # 20 sec per model!
 sec_per: 50.0
 
-nper: 50
+nper: 30

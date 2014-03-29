@@ -47,7 +47,7 @@ do_pqr: True
 
 fit_models: ['exp']
 
-joint_prior_type: "great3-real_galaxy-ground-constant-exp-hybrid"
+joint_prior_type: "great3-real_galaxy-ground-constant-exp-hybrid-deep03"
 
 # guess will be from an em single-gauss fit
 # pixel scale is 0.2, so this is 1/2 of a pixel
