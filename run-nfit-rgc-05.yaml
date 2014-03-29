@@ -58,5 +58,5 @@ draw_g_prior: False
 
 checkpoints: [10,60,90,110]
 
-sec_per: 30.0
-nper: 50
+sec_per: 50.0
+nper: 30
