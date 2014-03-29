@@ -1,0 +1,62 @@
+# config file for running on great3
+# fit exp will hybrid prior
+# fit the psf once
+#
+# this is a fourth iteration using expand shear from nfit-rgc-02
+# also 3 gauss psf
+# this time keeping some psf info so we can try to look for 
+# additive biases
+
+run: "nfit-rgc-05"
+
+shear_expand_run: "nfit-rgc-04"
+shear_expand_cut: "nfit-flags-02"
+
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+
+# really nail the psf
+psf_em_ntry: 2000
+psf_em_maxiter: 50000
+psf_em_tol: 5.0e-6
+
+# don't need to nail galaxy fit
+gal_em_ntry: 200
+gal_em_maxiter: 5000
+gal_em_tol: 5.0e-4
+
+
+use_random_psf: False
+
+psf_model: "em3"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 400
+nstep: 800
+mca_a: 2.0
+
+# how many times to re-try bad mcmc runs
+mcmc_ntry: 10
+
+# we are just getting priors
+do_pqr: True
+
+fit_models: ['exp']
+
+joint_prior_type: "great3-real_galaxy-ground-constant-exp-hybrid"
+
+# guess will be from an em single-gauss fit
+# pixel scale is 0.2, so this is 1/2 of a pixel
+use_cen_prior: True
+cen_width: 0.1
+
+draw_g_prior: False
+
+checkpoints: [10,60,90,110]
+
+sec_per: 30.0
+nper: 50
