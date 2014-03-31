@@ -3,7 +3,6 @@
 # fit the psf once
 #
 # this is a fourth iteration using expand shear from nfit-rgc-02
-# also 3 gauss psf
 # this time keeping some psf info so we can try to look for 
 # additive biases
 
