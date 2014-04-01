@@ -1,0 +1,12 @@
+# This is a generic cuts configuration, can be used
+# for many runs
+cut: "nfit-flags-03"
+
+# check for floating point problems, e.g. nan or not finite
+check_finite: true
+
+# this makes a small difference; is it worth it to take the
+# hit in SN cancellation?
+s2n_range: [20.0, 1000.0]
+
+arate_range: [0.4,0.6]
