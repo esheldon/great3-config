@@ -1,0 +1,61 @@
+# config file for running on great3
+# fit exp with hybrid prior, g prior from lackner cosmos fits
+# fit the psf once
+#
+# use nfit-rgc-04 for shear expand
+# also 3 gauss psf
+
+run: "nfit-rgc-06"
+
+shear_expand_run: "nfit-rgc-04"
+shear_expand_cut: "nfit-flags-02"
+
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+
+# really nail the psf
+psf_em_ntry: 2000
+psf_em_maxiter: 50000
+psf_em_tol: 5.0e-6
+
+# don't need to nail galaxy fit
+gal_em_ntry: 200
+gal_em_maxiter: 5000
+gal_em_tol: 5.0e-4
+
+use_random_psf: false
+
+psf_model: "em3"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 400
+nstep: 800
+mca_a: 2.0
+
+# how many times to re-try bad mcmc runs
+mcmc_ntry: 10
+
+# we are just getting priors
+do_pqr: true
+
+fit_models: ['exp']
+
+# structural parameters from my fits, but subbing in
+# ellipticities from lackner for g_prior
+joint_prior_type: "great3-rgc-exp-hybrid-cosmosg-deep03"
+
+# guess will be from an em single-gauss fit
+# pixel scale is 0.2, so this is 1/2 of a pixel
+use_cen_prior: true
+cen_width: 0.1
+
+draw_g_prior: false
+
+checkpoints: [60,90,110]
+
+sec_per: 30.0
+nper: 50

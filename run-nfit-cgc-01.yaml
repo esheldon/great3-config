@@ -1,12 +1,11 @@
-# real_galaxy, ground, constant
-# exp with psf ngauss 3 more burnin slightly tighter flat priors
+run: "nfit-cgc-01"
 
-run: "nfit-cgc-deep01"
+shear_expand_run: null
+shear_expand_cut: null
 
 experiment: "control"
 obs_type: "ground"
 shear_type: "constant"
-deep: True
 
 # really nail the psf
 psf_em_ntry: 2000
@@ -17,6 +16,7 @@ psf_em_tol: 5.0e-6
 gal_em_ntry: 200
 gal_em_maxiter: 5000
 gal_em_tol: 5.0e-4
+
 
 use_random_psf: false
 
@@ -30,33 +30,24 @@ burnin: 400
 nstep: 800
 mca_a: 2.0
 
+# how many times to re-try bad mcmc runs
+mcmc_ntry: 10
+
 # we are just getting priors
-do_pqr: False
+do_pqr: true
 
 fit_models: ['sersic']
 
-# for deep use loose priors
-
-g_prior_types: [null]
-
-T_prior_types: ['flat']
-T_prior_pars: [ [0.01, 10.0] ]
-
-counts_prior_types: ['flat']
-counts_prior_pars: [ [0.2, 50.0] ]
-
-n_prior_types: ['flat']
-n_prior_pars: [ [0.751,5.99] ]
+joint_prior_type: "great3-cgc-sersic-hybrid-deep01"
 
 # guess will be from an em single-gauss fit
+# pixel scale is 0.2, so this is 1/2 of a pixel
 use_cen_prior: True
-# arcsec; pretty broad!
-cen_width: 0.4
+cen_width: 0.1
 
 draw_g_prior: False
 
 checkpoints: [30,60,110]
 
 sec_per: 74.0
-
 nper: 30
