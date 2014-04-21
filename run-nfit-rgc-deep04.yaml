@@ -1,0 +1,62 @@
+# real_galaxy, ground, constant
+# exp with psf ngauss 3 more burnin slightly tighter flat priors
+
+run: "nfit-rgc-deep04"
+
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: True
+
+# really nail the psf
+psf_em_ntry: 2000
+psf_em_maxiter: 50000
+psf_em_tol: 5.0e-6
+
+# don't need to nail galaxy fit
+gal_em_ntry: 200
+gal_em_maxiter: 5000
+gal_em_tol: 5.0e-4
+
+use_random_psf: False
+
+psf_model: "em3"
+
+# arcsec
+psf_fwhm_guess: 0.9
+
+nwalkers: 80
+burnin: 400
+nstep: 800
+mca_a: 2.0
+
+# we are just getting priors
+do_pqr: False
+
+fit_models: ['exp']
+
+# for deep use loose priors
+
+g_prior_types: ["cosmos-sersic"]
+
+T_prior_types: ['flat']
+T_prior_pars: [ [0.01, 10.0] ]
+
+counts_prior_types: ['flat']
+counts_prior_pars: [ [0.2, 50.0] ]
+
+n_prior_types: [null]
+
+# guess will be from an em single-gauss fit
+use_cen_prior: True
+# arcsec; pretty broad!
+cen_width: 0.4
+
+draw_g_prior: False
+
+checkpoints: [10,60,90,110]
+
+# 20 sec per model!
+sec_per: 50.0
+
+nper: 30

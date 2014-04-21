@@ -15,9 +15,17 @@ run-rgc
     - run-rgc-05 edg i3 using 04 as expand shear, adding psf info, and newer
       fits to priors.  lower score, 270
 
+    - run-rgc-06 similar to 04 but using g prior from lackner
+
 - rgc-deep02 bdf
 - rgc-03 bdf trained from deep02
 
 - rgc-deep03 exp
     * exp with psf ngauss 3 more burnin slightly tighter flat priors run-rgc-05
     * edg i4 using 04 as expand shear and deep03 for priors
+
+run-cgc
+---------
+control ground constant
+
+- cgc-deep01 sersic
