@@ -16,6 +16,8 @@ run-rgc
       fits to priors.  lower score, 270
 
     - run-rgc-06 similar to 04 but using g prior from lackner
+        - score 412.  Ran another iteration from this and got 400; maybe noise
+        is about +/- 10
 
 - rgc-deep02 bdf
 - rgc-03 bdf trained from deep02
@@ -23,6 +25,9 @@ run-rgc
 - rgc-deep03 exp
     * exp with psf ngauss 3 more burnin slightly tighter flat priors run-rgc-05
     * edg i4 using 04 as expand shear and deep03 for priors
+
+- rgc-deep03 exp
+    - using cosmos g prior
 
 run-cgc
 ---------
