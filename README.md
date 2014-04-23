@@ -26,8 +26,8 @@ run-rgc
     * exp with psf ngauss 3 more burnin slightly tighter flat priors run-rgc-05
     * edg i4 using 04 as expand shear and deep03 for priors
 
-- rgc-deep03 exp
-    - using cosmos g prior
+- rgc-deep04 exp
+    - using cosmos g prior, all the rest is the same
 
 run-cgc
 ---------
