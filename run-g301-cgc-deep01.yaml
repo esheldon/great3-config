@@ -4,7 +4,7 @@
 run: "g301-cgc-deep01"
 
 great3run: "run01"
-experiment: "real_galaxy"
+experiment: "control"
 obs_type: "ground"
 shear_type: "constant"
 deep: True
