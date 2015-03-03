@@ -17,6 +17,22 @@ great3 run02
 Used psf parameters from Aaron and Mike
 
     - run-g302-rgc-01
+        - cuts-sfit-01 (shear noise weighted)
+
+            Q_c =  172.2700
+            c+  = -0.00069 +/- 0.00008
+            cx  = -0.00000 +/- 0.00006
+            m+  = +0.02172 +/- 0.00325
+            mx  = +0.01682 +/- 0.00242
+
+        - cuts-sfit-02 (Ts2n weighted)
+
+            Q_c =  487.4262
+            c+  = -0.00060 +/- 0.00008
+            cx  = +0.00003 +/- 0.00005
+            m+  = -0.00347 +/- 0.00296
+            mx  = -0.00616 +/- 0.00202
+
 
 old stuff
 ---------
