@@ -30,9 +30,6 @@ max_pars:
 
 isample_pars:
 
-    # first iteration 500, next 2000
-    # 500 gives 20% slowdown, 1000 40%
-    # 500 gives efficiency 0.19 +/- 0.06, 1000 0.22 +/-  0.07
     nsample: [500,2000]
     ifactor: 1.0
     df: 2.1
@@ -47,7 +44,7 @@ isample_pars:
 model_pars:
     exp:
         joint_prior:
-            name: 'g301-rgc-deep01'
+            name: 'g302-rgc-deep01'
             cen_prior_pars: [0.4]
 
 checkpoints: [10,60,90,110]
