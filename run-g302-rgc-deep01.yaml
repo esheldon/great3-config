@@ -1,6 +1,6 @@
 run: "g302-rgc-deep01"
 
-great3run: "run01"
+great3run: "run02"
 experiment: "real_galaxy"
 obs_type: "ground"
 shear_type: "constant"
