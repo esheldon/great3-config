@@ -3,8 +3,24 @@ great3-config
 
 config files for running on great3
 
+great3 run01
+------------
+
+rgc:
+    - run-g301-rgc-01,  first run
+        - forgot to record efficiency
+        - using single psf
+
+great3 run02
+------------
+
+Used psf parameters from Aaron and Mike
+
+    - run-g302-rgc-01
+
+old stuff
 ---------
-run-rgc
+rgc
 
 - rgc-deep01 expfit
 - real\_galaxy ground constant
