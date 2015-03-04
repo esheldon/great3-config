@@ -18,5 +18,4 @@ g_sens_range: [0.0, 1.05]
 # this is terrible
 #Trat_min: 0.5
 
-#use_weights: 'noise'
 use_weights: 'Ts2n'
