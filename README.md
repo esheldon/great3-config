@@ -33,6 +33,37 @@ Used psf parameters from Aaron and Mike
             m+  = -0.00347 +/- 0.00296
             mx  = -0.00616 +/- 0.00202
 
+    # using 3 gauss psf
+    - run-g302-rgc-01
+        - looks better
+
+    # composite fit, priors from g302-rgc-deep02
+    - run-g302-rgc-03
+        - looks very bad, m=0.05 for both components.  Must be a bug
+        - note no need to iterate in isample, just use [2000]
+
+        - could it be using BA as prior?  In nsim run it didn't matter,
+            even with low s/n, although these were fairly large galaxies
+            - maybe try great-des style dist
+            - maybe run exp+dev sim for smaller sizes.
+                - Note dev T should be not equal to exp to be realistic!
+
+    # composite fit, priors from g302-rgc-deep02 with g fit prior
+    # using GreatDES g prior (new parameters)
+    - run-g302-rgc-04
+
+        - about same with default cuts
+
+        - interestingly, s/n cut helps
+
+            for s/n > 40 I get Q=234  m ~  0.015
+            for s/n > 45 I get Q=379  m ~  0.009
+            for s/n > 50 I get Q=1030 m ~  0.002
+            for s/n > 55 I get Q=668  m ~ -0.004
+            for s/n > 60 I get Q=405  m ~ -0.009
+
+        so there is some noise for sure here, hard to know if we should
+        believe this cut at exactly 50 is meaningful
 
 old stuff
 ---------
