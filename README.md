@@ -65,6 +65,10 @@ Used psf parameters from Aaron and Mike
         so there is some noise for sure here, hard to know if we should
         believe this cut at exactly 50 is meaningful
 
+TODO
+    - add fracdev and maybe cut on error or weight with it?
+    - new great3 run without ring
+
 old stuff
 ---------
 rgc
