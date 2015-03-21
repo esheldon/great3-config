@@ -65,9 +65,20 @@ Used psf parameters from Aaron and Mike
         so there is some noise for sure here, hard to know if we should
         believe this cut at exactly 50 is meaningful
 
+Exploring fracdev more
+
+run-g302-rgc-deep03
+    - another cm run but this time recording fracdev
+run-g302-rgc-deep04
+    - another cm run this time recording unclipped fracdev
+run-g302-rgc-deep05
+    - another cm run this time *using* unclipped fracdev
+
+
 TODO
     - add fracdev and maybe cut on error or weight with it?
     - new great3 run without ring
+    - rerun deep fields saving fracdev.
 
 old stuff
 ---------

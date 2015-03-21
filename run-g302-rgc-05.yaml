@@ -51,6 +51,7 @@ model_pars:
 checkpoints: [10,60,90,110]
 
 # for all models
+# more like 2.5 on many machines
 sec_per: 4.0
 
 nper: 500
