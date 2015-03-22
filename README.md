@@ -75,10 +75,14 @@ run-g302-rgc-deep05
     - another cm run this time *using* unclipped fracdev
 
 
+
 TODO
-    - add fracdev and maybe cut on error or weight with it?
     - new great3 run without ring
-    - rerun deep fields saving fracdev.
+
+    - use prior on fracdev
+        - Seed fracdev fitter with best of
+            linspace(-1.0,1.1,22)
+    - use nm so prior can be used
 
 old stuff
 ---------
