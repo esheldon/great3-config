@@ -50,6 +50,8 @@ model_pars:
         joint_prior:
             name: 'g302-rgc-deep02'
             cen_prior_pars: [0.4]
+            # we have the prior, so no need to strongly clip
+            fracdev_range: [-2,2]
 
 checkpoints: [10,60,90,110]
 
