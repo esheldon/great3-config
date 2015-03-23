@@ -45,7 +45,7 @@ isample_pars:
 
 
 fracdev_prior: "g302-rgc-deep05"
-fracdev_prior_s2nmax: 30.0
+#fracdev_prior_s2nmax: 30.0
 
 model_pars:
     cm:
