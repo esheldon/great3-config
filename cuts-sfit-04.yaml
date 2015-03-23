@@ -3,7 +3,9 @@ cut: "sfit-04"
 # check for floating point problems, e.g. nan or not finite
 check_finite: True
 
-s2n_range: [30.0, 1000.0]
+s2n_range: [50.0, 1000.0]
+
+#cut_fracdev_exact: True
 
 #Ts2n_min: 8.0
 
