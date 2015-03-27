@@ -1,4 +1,4 @@
-# only use prior for s/n < 30
+# seeing if 06 can be repeated
 # added prior on fracdev
 # composite galaxy model, em 3 gauss psf
 # this same as 04 but added fracdev output and TdByTe

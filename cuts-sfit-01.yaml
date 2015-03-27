@@ -12,3 +12,4 @@ g_sens_range: [0.0, 1.05]
 
 use_weights: 'noise'
 SN: 0.22
+#SN: 0.16
