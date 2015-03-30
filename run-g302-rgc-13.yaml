@@ -1,0 +1,68 @@
+# reverting back to always using prior if present,
+# but now clipping the result ofthe final fracdev
+# fit to [0,1]
+#
+# added check s2n > 35.0, hard wired for now
+# joint prior on fracdev with F (not T also as 08)
+# composite galaxy model, em 3 gauss psf
+# this same as 04 but added fracdev output and TdByTe
+run: "g302-rgc-13"
+
+great3run: "run02"
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: False
+
+pixel_scale: 0.26
+
+use_random_psf: True
+
+# arcsec
+psf_ntry: 4
+psf_model: "em3"
+psf_fwhm_guess: 0.9
+
+# we are just getting priors
+do_shear: True
+
+fitter_class: "sfit-composite"
+fitter_type: "isample"
+
+max_pars:
+    method: "lm"
+    ntry: 4
+    fracdev_range: [0.0,1.0]
+    lm_pars:
+        maxfev: 4000
+
+isample_pars:
+
+    nsample: [2000]
+    ifactor: 1.0
+    df: 2.1
+    min_err: [1.0e-4,1.0e-4,1.0e-3,1.0e-3,1.0e-4,1.0e-4]
+    max_err: [1.0,1.0,1.0,1.0,1.0,1.0]
+
+    cov_pars:
+        h: 1.0e-3
+        m: 5.0
+
+
+fracdev_prior: "g302-rgc-deep06"
+fracdev_prior_type: "F-fracdev"
+
+model_pars:
+    cm:
+        joint_prior:
+            name: 'g302-rgc-deep02'
+            cen_prior_pars: [0.4]
+            # we have the prior, so no need to strongly clip
+
+checkpoints: [10,60,90,110]
+
+# for all models
+# more like 2.5 on many machines
+sec_per: 4.0
+
+nper: 500
