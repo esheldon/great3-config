@@ -51,6 +51,7 @@ Used psf parameters from Aaron and Mike
     # composite fit, priors from g302-rgc-deep02 with g fit prior
     # using GreatDES g prior (new parameters)
     - run-g302-rgc-04
+        - clip fracdev [0,1]
 
         - about same with default cuts
 
@@ -64,6 +65,40 @@ Used psf parameters from Aaron and Mike
 
         so there is some noise for sure here, hard to know if we should
         believe this cut at exactly 50 is meaningful
+
+    - run-g302-rgc-05
+        - same as 04, just added saving some output
+
+    - run-g302-rgc-06
+        - computed prior from deep05, unclipped
+            - does great at low s/n now, but crappy
+                at high s/n
+            - so no clipping at high s/n is actually bad, or perhaps
+                the underlying reason just manifests that way
+            - prior without clipping is great at low s/n
+
+    - the following runs up to 12 explore various things, but
+        the conclusion is that the prior (unclipped) from the deep fields is
+        great at low s/n but not high.  Maybe the prior itself is just crap
+        there, not sure, but have seen that doing the fit and clipping at high
+        s/n works well, and applying prior without clipping works great at low
+        s/n.  Is that just particular to these fields?
+
+    - things to explore
+
+        - the best of exp and dev: so greater of loglike_exp*freq_exp and
+        loglike_dev*freq_dev
+
+        - prior on clipped fracdev.  The problem there is fitting
+            it.  Might be better off tabulating it?
+
+        - could still use the continuous prior but clip the result?
+            - easy to implement
+            - clue here? Is faint end failing and getting clipped
+                more?
+
+    - run-g302-rgc-13
+        - using full prior but clipping result to [0,1]
 
 Exploring fracdev more
 
