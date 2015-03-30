@@ -77,6 +77,10 @@ Used psf parameters from Aaron and Mike
                 the underlying reason just manifests that way
             - prior without clipping is great at low s/n
 
+    - run-g302-rgc-12
+        - no prior but also no clip, not very good at any
+            s/n
+
     - the following runs up to 12 explore various things, but
         the conclusion is that the prior (unclipped) from the deep fields is
         great at low s/n but not high.  Maybe the prior itself is just crap
@@ -84,10 +88,25 @@ Used psf parameters from Aaron and Mike
         s/n works well, and applying prior without clipping works great at low
         s/n.  Is that just particular to these fields?
 
+                          Q for various parameters
+
+                          all s/n      high s/n (>50)   
+                       ------------------------------
+05 no prior, clipped   |    230     |       1030
+12         no prior    |    340     |        160
+13   prior, clipped    |    120     |        750
+06            prior    |    600     |        130
+
     - things to explore
 
         - the best of exp and dev: so greater of loglike_exp*freq_exp and
         loglike_dev*freq_dev
+
+            - the clipping that works well at high s/n forces most
+                galaxies to be modeled by pure exp
+
+            - if most of the fracdev between 0 and 1 is really noise
+                then this might be better
 
         - prior on clipped fracdev.  The problem there is fitting
             it.  Might be better off tabulating it?
@@ -98,7 +117,20 @@ Used psf parameters from Aaron and Mike
                 more?
 
     - run-g302-rgc-13
-        - using full prior but clipping result to [0,1]
+        - use prior but clip fracdev [0,1]
+            - still works quite well at high s/n, crap at log s/n
+
+    - run-g302-rgc-14
+        - clip [0,1] only for s/n > 35
+        - in matrix above, this would perform most consistently
+        - seems incorrect tough, as if it would not work on real
+            data
+        - worry it is some reflection on sample variance in
+            great3?  Should create more low noise images
+            to reduce sample variance in prior?
+
+        - works pretty well only for high s/n... how can this be
+            consistent with 06?  somehow breaking the ring test?
 
 Exploring fracdev more
 
