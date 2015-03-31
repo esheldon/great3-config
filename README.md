@@ -99,6 +99,8 @@ Used psf parameters from Aaron and Mike
 
     - things to explore
 
+        - redo priors based on some psf flux cut or gauss flux cut
+
         - the best of exp and dev: so greater of loglike_exp*freq_exp and
         loglike_dev*freq_dev
 
