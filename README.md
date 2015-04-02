@@ -99,6 +99,12 @@ Used psf parameters from Aaron and Mike
 
     - things to explore
 
+        - maybe not fitting that spike at fracdev=0 is causing the problem
+            at high s/n?
+            - mike's plots show the fracdev should not evolve much, so
+                maybe confirms something is fishy?
+
+
         - redo priors based on some psf flux cut or gauss flux cut
 
         - the best of exp and dev: so greater of loglike_exp*freq_exp and
@@ -118,6 +124,10 @@ Used psf parameters from Aaron and Mike
             - clue here? Is faint end failing and getting clipped
                 more?
 
+        - run on control branch.  Although it may have the same issues
+            with sample variance, if this is built into the sersic
+            fits as well.....
+
     - run-g302-rgc-13
         - use prior but clip fracdev [0,1]
             - still works quite well at high s/n, crap at log s/n
@@ -133,6 +143,20 @@ Used psf parameters from Aaron and Mike
 
         - works pretty well only for high s/n... how can this be
             consistent with 06?  somehow breaking the ring test?
+
+    - run-g302-rgc-15
+        - realized I needed to update the TF prior when not
+            clipping!
+        - Maybe should try clipping to [-1,1.5] on failure
+            of the CM fit, instead of [0,1]
+
+    - run-g302-rgc-16
+        - try to choose exp or dev, with prior
+
+    - run-g302-rgc-17
+        - same as 06 but using BA for g prior
+
+
 
 Exploring fracdev more
 
