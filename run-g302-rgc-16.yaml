@@ -1,0 +1,74 @@
+# choosing best  model, with prior on the rate of each type
+# from the deep fields
+run: "g302-rgc-16"
+
+great3run: "run02"
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: False
+
+pixel_scale: 0.26
+
+use_random_psf: True
+
+# arcsec
+psf_ntry: 4
+psf_model: "em3"
+psf_fwhm_guess: 0.9
+
+# we are just getting priors
+do_shear: True
+
+fitter_class: "sfit-best"
+fitter_type: "isample"
+
+max_pars:
+    method: "lm"
+    ntry: 4
+    lm_pars:
+        maxfev: 4000
+
+isample_pars:
+
+    nsample: [2000]
+    ifactor: 1.0
+    df: 2.1
+    min_err: [1.0e-4,1.0e-4,1.0e-3,1.0e-3,1.0e-4,1.0e-4]
+    max_err: [1.0,1.0,1.0,1.0,1.0,1.0]
+
+    cov_pars:
+        h: 1.0e-3
+        m: 5.0
+
+exp_rate: 0.968
+
+# will use best of these
+model_pars:
+    best:
+        exp:
+            joint_prior:
+                name: 'g302-rgc-deep01'
+                partype: 'exp-TF'
+
+                g_prior_type: 'great-des'
+                g_prior_pars: [1.0, 9115.05, 0.0558503, 0.663458]
+
+                cen_prior_pars: [0.4]
+        dev:
+            joint_prior:
+                name: 'g302-rgc-deep01'
+                partype: 'dev-TF'
+
+                g_prior_type: 'great-des'
+                g_prior_pars: [1.0, 3.05868, 0.036416, 1.10908]
+
+                cen_prior_pars: [0.4]
+
+
+checkpoints: [10,60,90,110]
+
+# for all models
+sec_per: 1.7
+
+nper: 500
