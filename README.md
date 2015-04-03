@@ -158,6 +158,11 @@ cgc
     - run-g302-cgc-01
         - looks like crap!
 
+great3 run03
+------------
+
+trying to put ring pairs together to help selections
+
 
 Exploring fracdev more
 
