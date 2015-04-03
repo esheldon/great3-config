@@ -1,8 +1,5 @@
 # keeping psf flux
 # use full fitting with guess but no prior
-# using fracdev_noclip as fracdev!
-# this one with randompsf and keeping fracdev
-# using composite model
 run: "g302-rgc-deep07"
 
 great3run: "run02"

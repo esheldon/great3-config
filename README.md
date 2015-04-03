@@ -99,38 +99,34 @@ Used psf parameters from Aaron and Mike
 
     - things to explore
 
-        - maybe not fitting that spike at fracdev=0 is causing the problem
+        - try cutting chi2per
+        - try using combined g_sens
+
+        - maybe the clipping of just high fracdev would help?
+            - prior clipped [-1.5,1.1]?
+
+        - maybe *not* fitting that spike at fracdev=0 is causing the problem
             at high s/n?
             - mike's plots show the fracdev should not evolve much, so
                 maybe confirms something is fishy?
 
+        - maybe cgc was crap *because* it fit the spike?
 
-        - redo priors based on some psf flux cut or gauss flux cut
+        - or maybe *fitting* spike at fracdev=1 is a problem?
+            - it always gets fit, no way to remove it sensibly
 
-        - the best of exp and dev: so greater of loglike_exp*freq_exp and
-        loglike_dev*freq_dev
+        - should have priors for exp and dev separately, not the one
+            from cm...!  Maybe this is messing up the high s/n?
 
-            - the clipping that works well at high s/n forces most
-                galaxies to be modeled by pure exp
-
-            - if most of the fracdev between 0 and 1 is really noise
-                then this might be better
-
-        - prior on clipped fracdev.  The problem there is fitting
-            it.  Might be better off tabulating it?
-
-        - could still use the continuous prior but clip the result?
-            - easy to implement
-            - clue here? Is faint end failing and getting clipped
-                more?
-
-        - run on control branch.  Although it may have the same issues
-            with sample variance, if this is built into the sersic
-            fits as well.....
+        - ruled out
+            - best of exp/dev
+            - clipping to [0,1] after the fact with prior applied
+            - separate priors for different s/n cut.  I tried s/n > 50 with new
+              prior based on psf flux cut and it looked like crap
 
     - run-g302-rgc-13
         - use prior but clip fracdev [0,1]
-            - still works quite well at high s/n, crap at log s/n
+            - still works quite well at high s/n, crap at low s/n
 
     - run-g302-rgc-14
         - clip [0,1] only for s/n > 35
@@ -147,15 +143,20 @@ Used psf parameters from Aaron and Mike
     - run-g302-rgc-15
         - realized I needed to update the TF prior when not
             clipping!
-        - Maybe should try clipping to [-1,1.5] on failure
-            of the CM fit, instead of [0,1]
 
     - run-g302-rgc-16
         - try to choose exp or dev, with prior
 
     - run-g302-rgc-17
         - same as 06 but using BA for g prior
+        - looks like crap!
+            - the only change I recall is resetting the center
 
+cgc
+
+    - run-g302-cgc-deep01
+    - run-g302-cgc-01
+        - looks like crap!
 
 
 Exploring fracdev more
