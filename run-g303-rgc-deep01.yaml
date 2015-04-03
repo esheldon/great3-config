@@ -1,0 +1,52 @@
+# keeping psf flux
+# use full fitting with guess but no prior
+run: "g303-rgc-deep07"
+
+great3run: "run03"
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: True
+
+pixel_scale: 0.26
+
+use_random_psf: True
+
+psf_model: "em3"
+
+# arcsec
+psf_ntry: 4
+psf_model: "em3"
+psf_fwhm_guess: 0.9
+
+# we are just getting priors
+do_shear: False
+
+fitter_class: "sfit-composite"
+fitter_type: "maxlike"
+max_pars:
+    method: "lm"
+    ntry: 4
+    # wider than we would allow in noisier data
+    fracdev_range: [-3.0, 3.0]
+    #fracdev_range: [0.0, 1.0]
+    lm_pars:
+        maxfev: 4000
+
+model_pars:
+    cm:
+        g_prior_type: "flat"
+        g_prior_pars: [1.0]
+        T_prior_type: "flat"
+        T_prior_pars: [-11.5, 8.05]
+        counts_prior_type: "flat"
+        counts_prior_pars: [-9.2,15.0]
+        cen_prior_type: "dgauss"
+        cen_prior_pars: [0.4]
+
+checkpoints: [10,60,90,110]
+
+# for all models
+sec_per: 0.42
+
+nper: 1000
