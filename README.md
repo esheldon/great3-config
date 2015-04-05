@@ -13,19 +13,18 @@ rgc
 ====
 
     - TODO
-        - exp/dev priors don't help any, nor does doing full fit for fracdev
         - currently using great-des prior, but should adapt to the galaxies
             we have or try BA?
-
-        - previously did better with TF prior on *cm* (not for exp/dev
-            separately) and from deep run that had been *clipped*
-            in fracdev.  maybe this kept the distributions trimmed a bit?
-
-            wow, T distributions radically different....
 
         - maybe should use fracdev from the brightest sample? Maybe deep fields
             still too noisy?  Hmm... most between 200 and 1000  Maybe fit
             from s/n > 400? Or limit on noise on fracdev 0.1?
+
+            - limiting error on fracdev makes the dist look quite different
+              even for the deep data
+
+        - maybe use TF-fracdev prior?
+        - other cuts?
 
     - deep runs
 
@@ -58,12 +57,13 @@ rgc
 
         * run-g303-rgc-05
             - using TF prior from deep03, which clipped the fracdev
+            - Q,m looks good at low s/n  c worse
+            - worse at high s/n
 
         * run-g303-rgc-06
-            maybe...
-            - using TF prior from deep03, which clipped the fracdev
-            - using not clipped fracdev prior (deep01) but clipping
-                it after the fit!
+            - using new F-fracdev-02 prior, in which I used a tighter
+                cut on fracdev error
+            - using grid
 
 
 great3 run02

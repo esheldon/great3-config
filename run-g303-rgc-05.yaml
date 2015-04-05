@@ -1,4 +1,4 @@
-# using deep03 for TF prior, which had clipped fracdev
+# using prior from clipped deep run
 run: "g303-rgc-05"
 
 great3run: "run03"
@@ -46,7 +46,6 @@ max_pars:
     method: "lm"
     ntry: 4
     use_fracdev_grid: False
-    # no need to clip because using grid
     fracdev_range: [-2.0,2.0]
     lm_pars:
         maxfev: 4000
@@ -55,7 +54,7 @@ max_pars:
 model_pars:
     cm:
         joint_prior:
-            name: 'g303-rgc-deep03'
+            name: 'g303-rgc-deep01'
             partype: 'cm-TF'
 
             g_prior_type: 'great-des'
