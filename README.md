@@ -3,13 +3,68 @@ great3-config
 
 config files for running on great3
 
-great3 run01
+
+great3 run03
 ------------
 
-rgc:
-    - run-g301-rgc-01,  first run
-        - forgot to record efficiency
-        - using single psf
+Same as run02, but putting ring pairs together to help selections
+
+rgc
+====
+
+    - TODO
+        - exp/dev priors don't help any, nor does doing full fit for fracdev
+        - currently using great-des prior, but should adapt to the galaxies
+            we have or try BA?
+
+        - previously did better with TF prior on *cm* (not for exp/dev
+            separately) and from deep run that had been *clipped*
+            in fracdev.  maybe this kept the distributions trimmed a bit?
+
+            wow, T distributions radically different....
+
+        - maybe should use fracdev from the brightest sample? Maybe deep fields
+            still too noisy?  Hmm... most between 200 and 1000  Maybe fit
+            from s/n > 400? Or limit on noise on fracdev 0.1?
+
+    - deep runs
+
+        - run-g303-rgc-deep01
+            - cm
+        - run-g303-rgc-deep02
+            - exp and dev for priors (not used yet)
+        - run-g303-rgc-deep03
+            - clipping fracdev [0,1]
+            - T distribution radically different
+
+    - regular runs
+
+        - run-g303-rgc-01
+            - F-fracdev prior
+            - not using separate priors from exp and dev
+            - looks good, but note accidentally used prior from g302 deep07!
+
+        - run-g303-rgc-02
+            - fracdev prior not flux dependent.  Used correct prior!
+
+        - run-g303-rgc-03
+            - same as 01 with F-fracdev but now with deep01 prior
+                - this should not matter much
+            - also added continuous fracdev fitting
+
+        - run-g303-rgc-04
+            - same as 03 but now with exp/dev priors separate
+            - no better
+
+        * run-g303-rgc-05
+            - using TF prior from deep03, which clipped the fracdev
+
+        * run-g303-rgc-06
+            maybe...
+            - using TF prior from deep03, which clipped the fracdev
+            - using not clipped fracdev prior (deep01) but clipping
+                it after the fit!
+
 
 great3 run02
 ------------
@@ -158,14 +213,6 @@ cgc
     - run-g302-cgc-01
         - looks like crap!
 
-great3 run03
-------------
-
-trying to put ring pairs together to help selections
-
-
-Exploring fracdev more
-
 run-g302-rgc-deep03
     - another cm run but this time recording fracdev
 run-g302-rgc-deep04
@@ -173,15 +220,14 @@ run-g302-rgc-deep04
 run-g302-rgc-deep05
     - another cm run this time *using* unclipped fracdev
 
+great3 run01
+------------
 
+rgc:
+    - run-g301-rgc-01,  first run
+        - forgot to record efficiency
+        - using single psf
 
-TODO
-    - new great3 run without ring
-
-    - use prior on fracdev
-        - Seed fracdev fitter with best of
-            linspace(-1.0,1.1,22)
-    - use nm so prior can be used
 
 old stuff
 ---------

@@ -1,6 +1,6 @@
 # keeping psf flux
 # use full fitting with guess but no prior
-run: "g303-rgc-deep07"
+run: "g303-rgc-deep01"
 
 great3run: "run03"
 experiment: "real_galaxy"

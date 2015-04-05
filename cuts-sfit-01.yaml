@@ -4,12 +4,11 @@ cut: "sfit-01"
 # check for floating point problems, e.g. nan or not finite
 check_finite: True
 
-# this makes a small difference; is it worth it to take the
-# hit in SN cancellation?
+#cut_fracdev_exact: True
+
 s2n_range: [0.0, 1000.0]
 
 g_sens_range: [0.0, 1.05]
 
 use_weights: 'noise'
 SN: 0.22
-#SN: 0.16
