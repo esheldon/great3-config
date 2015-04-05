@@ -1,0 +1,10 @@
+# cuts used when fitting priors
+name: "01"
+
+F_range: [-1.0, 4.0]
+T_range: [-7.0, 2.0]
+
+fracdev_range: [-1.0, 1.1]
+fracdev_err_max: 0.05
+
+min_covar: 1.0e-4
