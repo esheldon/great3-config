@@ -1,0 +1,56 @@
+run: "g303-rgc-deep02"
+
+great3run: "run03"
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: True
+
+pixel_scale: 0.26
+
+use_random_psf: False
+
+psf_model: "em3"
+
+# arcsec
+psf_ntry: 4
+psf_model: "turb"
+psf_fwhm_guess: 0.9
+
+# we are just getting priors
+do_shear: False
+
+fitter_class: "sfit"
+fitter_type: "maxlike"
+max_pars:
+    method: "lm"
+    ntry: 4
+    lm_pars:
+        maxfev: 4000
+
+model_pars:
+    exp:
+        g_prior_type: "flat"
+        g_prior_pars: [1.0]
+        T_prior_type: "flat"
+        T_prior_pars: [-11.5, 8.05]
+        counts_prior_type: "flat"
+        counts_prior_pars: [-9.2,15.0]
+        cen_prior_type: "dgauss"
+        cen_prior_pars: [0.4]
+    dev:
+        g_prior_type: "flat"
+        g_prior_pars: [1.0]
+        T_prior_type: "flat"
+        T_prior_pars: [-11.5, 8.05]
+        counts_prior_type: "flat"
+        counts_prior_pars: [-9.2,15.0]
+        cen_prior_type: "dgauss"
+        cen_prior_pars: [0.4]
+
+checkpoints: [10,60,90,110]
+
+# for all models
+sec_per: 0.13
+
+nper: 1000
