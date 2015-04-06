@@ -5,7 +5,7 @@ cut: "sfit-Ts2n01"
 check_finite: True
 
 s2n_range: [0.0, 1000.0]
-Ts2n_min: 5.0
+Ts2n_min: 1.0
 
 g_sens_range: [0.0, 1.05]
 
