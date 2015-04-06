@@ -1,0 +1,78 @@
+# same as 06 but m-erf prior
+run: "g303-rgc-08"
+
+great3run: "run03"
+experiment: "real_galaxy"
+obs_type: "ground"
+shear_type: "constant"
+deep: False
+
+pixel_scale: 0.26
+
+use_random_psf: True
+
+# arcsec
+psf_ntry: 4
+psf_model: "em3"
+psf_fwhm_guess: 0.9
+
+# we are just getting priors
+do_shear: True
+
+fitter_class: "sfit-composite"
+fitter_type: "isample"
+
+isample_pars:
+
+    nsample: [2000]
+    ifactor: 1.0
+    df: 2.1
+    min_err: [1.0e-4,1.0e-4,1.0e-3,1.0e-3,1.0e-4,1.0e-4]
+    max_err: [1.0,1.0,1.0,1.0,1.0,1.0]
+
+    cov_pars:
+        h: 1.0e-3
+        m: 5.0
+
+fracdev_grid:
+    min: -1.0
+    max:  1.1
+    num:  22
+
+fracdev_prior: "g303-rgc-deep01"
+fracdev_prior_type: "F-fracdev-01"
+
+max_pars:
+    method: "lm"
+    ntry: 4
+    use_fracdev_grid: False
+
+    # wider than grid to allow fit to move
+    # but in practice the lower fracdev tend to fail
+    # in noisier data
+
+    fracdev_range: [-1.5,1.5]
+    lm_pars:
+        maxfev: 4000
+
+
+model_pars:
+    cm:
+        joint_prior:
+            name: 'g303-rgc-deep01'
+            partype: 'cm-TF-01'
+
+            g_prior_type: 'm-erf'
+            g_prior_pars: [46.5299, 8705.29, 0.044783, 0.597338, 0.150762]
+            cen_prior_pars: [0.4]
+
+# shape prior not as important here
+extra_model_pars: null
+
+checkpoints: [10,60,90,110]
+
+# for all models
+# more like 2.5 on many machines
+sec_per: 4.0
+
+nper: 500
