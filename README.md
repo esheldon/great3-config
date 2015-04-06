@@ -68,8 +68,8 @@ rgc
         - run-g303-rgc-07
             - same as 06 but BA prior, 0.3
 
-        * run-g303-rgc-08
-            - prior on fracdev from bright end?
+        - run-g303-rgc-08
+            - erf2 prior
 
 
 great3 run02
