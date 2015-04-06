@@ -55,15 +55,21 @@ rgc
             - same as 03 but now with exp/dev priors separate
             - no better
 
-        * run-g303-rgc-05
+        - run-g303-rgc-05
             - using TF prior from deep03, which clipped the fracdev
             - Q,m looks good at low s/n  c worse
             - worse at high s/n
 
-        * run-g303-rgc-06
+        - run-g303-rgc-06
             - using new F-fracdev-02 prior, in which I used a tighter
                 cut on fracdev error
-            - using grid
+            - marginally better at high s/n
+
+        - run-g303-rgc-07
+            - same as 06 but BA prior, 0.3
+
+        * run-g303-rgc-08
+            - prior on fracdev from bright end?
 
 
 great3 run02
