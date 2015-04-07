@@ -67,10 +67,15 @@ rgc
 
         - run-g303-rgc-07
             - same as 06 but BA prior, 0.3
+            - crap!
 
         - run-g303-rgc-08
             - erf2 prior
+            - not quite as good
 
+        - run-g303-rgc-09
+            - 1000 isamples
+            - looks pretty much the same as 06
 
 great3 run02
 ------------
