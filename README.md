@@ -77,6 +77,10 @@ rgc
             - 1000 isamples
             - looks pretty much the same as 06
 
+        - run-g303-rgc-10
+            - 500 isamples
+
+
 great3 run02
 ------------
 
