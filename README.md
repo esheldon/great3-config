@@ -80,6 +80,8 @@ rgc
         - run-g303-rgc-10
             - 500 isamples
 
+        - run-g303-rgc-e01
+            - an exp-only run
 
 great3 run02
 ------------
