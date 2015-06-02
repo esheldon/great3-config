@@ -79,6 +79,12 @@ rgc
 
         - run-g303-rgc-10
             - 500 isamples
+            - round s/n
+
+        - run-g303-rgc-11
+            - flat priors
+            - 500 isamples
+            - round s/n included
 
         - run-g303-rgc-e01
             - an exp-only run
