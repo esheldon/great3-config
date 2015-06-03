@@ -89,6 +89,9 @@ rgc
             - 500,500 isamples
             - round s/n included
 
+        - run-g303-rgc-13
+            - turb to see if round measure works better
+            - 500,500 isamples
  
         - run-g303-rgc-e01
             - an exp-only run
